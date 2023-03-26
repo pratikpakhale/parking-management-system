@@ -7,7 +7,7 @@ import mysql.connector
 mydb = mysql.connector.Connect(
     host='localhost',
     user='root',
-    password='2755',
+    password='XXXXXX',
     database='ParkingLot'
 )
 

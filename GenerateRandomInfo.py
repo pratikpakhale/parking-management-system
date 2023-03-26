@@ -3,6 +3,14 @@ import string
 import mysql.connector
 import random
 
+mydb = mysql.connector.Connect(
+    host='localhost',
+    user='root',
+    password='XXXXXX',
+    database='ParkingLot'
+)
+
+
 # car number
 state = ['MH', 'BR', 'HR', 'KA', 'MP', 'ML', 'PB', 'DL', 'UP', 'UT', 'TN', 'RJ', 'KL', 'TG']
 districts = ['02', '27', '31', '20', '35', '40', '45', '15', '19']
@@ -64,14 +72,6 @@ def getCardNumber():
 
 
 def getSpotNumDB():
-
-    mydb = mysql.connector.Connect(
-        host='localhost',
-        user='root',
-        password='2755',
-        database='ParkingLot'
-    )
-
     mycursor = mydb.cursor()
 
     sql = "SELECT SrNum FROM ParkingLot.ParkingSpot WHERE Spot = 'Null'"
@@ -86,8 +86,5 @@ def getSpotNumDB():
 
     # print(li)
     mydb.commit()
-
-    mycursor.close()
-
     return random.choice(li)
 
