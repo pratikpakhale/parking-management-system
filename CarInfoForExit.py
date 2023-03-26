@@ -6,7 +6,7 @@ import TotalAmount
 mydb = mysql.connector.Connect(
     host='localhost',
     user='root',
-    password='XXXXXX',
+    password='2755',
     database='ParkingLot'
 )
 
@@ -77,6 +77,7 @@ class ExitCarInfo(object):
             self.SpotNum = i[7]
 
         self.DeleteDataAndTicket()
+        self.__init__()
 
     def DeleteDataAndTicket(self):
         self.DeleteDataDB()
